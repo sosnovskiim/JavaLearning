@@ -1,7 +1,17 @@
 package org.knit.solutions.task36;
 
-public class Task36 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 36, taskDescription = "Паттерны. Наблюдатель (Observer)")
+public class Task36 implements Solution {
     public static void main(String[] args) {
+        Task36 task = new Task36();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Stock stock = new Stock("Tesla");
         MobileApp mobileApp = new MobileApp();
         EmailApp emailApp = new EmailApp();

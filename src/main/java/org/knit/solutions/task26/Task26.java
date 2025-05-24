@@ -1,7 +1,17 @@
 package org.knit.solutions.task26;
 
-public class Task26 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 26, taskDescription = "Паттерны. Цепочка обязанностей (Chain of responsibility)")
+public class Task26 implements Solution {
     public static void main(String[] args) {
+        Task26 task = new Task26();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Handler junior = new JuniorManager();
         Handler senior = new SeniorManager();
         Handler director = new Director();

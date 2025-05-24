@@ -1,10 +1,20 @@
 package org.knit.solutions.task44;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.text.DecimalFormat;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Task44 {
+@TaskDescription(taskNumber = 44, taskDescription = "Парадокс Монти Холла")
+public class Task44 implements Solution {
     public static void main(String[] args) {
+        Task44 task = new Task44();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         int testsNumber = 1000000;
         DecimalFormat decimalFormat = new DecimalFormat("##.##");
 

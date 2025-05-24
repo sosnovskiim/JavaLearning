@@ -1,11 +1,21 @@
 package org.knit.solutions.task10;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Task10 {
+@TaskDescription(taskNumber = 10, taskDescription = "Консольная игра «Виселица»")
+public class Task10 implements Solution {
     public static void main(String[] args) {
+        Task10 task = new Task10();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Dictionary dictionary = DictionaryFactory.createDictionary("misc/dictionary.txt");
         if (dictionary != null) {
             Scanner scanner = new Scanner(System.in);

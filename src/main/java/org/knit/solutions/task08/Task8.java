@@ -1,9 +1,19 @@
 package org.knit.solutions.task08;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.*;
 
-public class Task8 {
+@TaskDescription(taskNumber = 8, taskDescription = "Переопределение методов класса Object")
+public class Task8 implements Solution {
     public static void main(String[] args) {
+        Task8 task = new Task8();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Random random = new Random();
         String[] names = {"сыр", "колбаса", "молоко", "оливки", "масло"};
         int[] prices = {100, 150, 200, 250, 300, 350, 400, 450, 500};

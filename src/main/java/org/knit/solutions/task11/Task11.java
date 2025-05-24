@@ -1,11 +1,21 @@
 package org.knit.solutions.task11;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Task11 {
+@TaskDescription(taskNumber = 11, taskDescription = "Управление списком студентов")
+public class Task11 implements Solution {
     public static void main(String[] args) {
+        Task11 task = new Task11();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Set<String> students = new TreeSet<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Доступные действия:\n" +

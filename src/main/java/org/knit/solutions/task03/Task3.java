@@ -1,11 +1,21 @@
 package org.knit.solutions.task03;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Task3 {
+@TaskDescription(taskNumber = 3, taskDescription = "Консольный калькулятор")
+public class Task3 implements Solution {
     public static void main(String[] args) {
+        Task3 task = new Task3();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Scanner scanner = new Scanner(System.in);
         HashSet<String> operators = new HashSet<>(Set.of("+", "-", "*", "/"));
         Calculator calculator = new Calculator();

@@ -1,7 +1,17 @@
 package org.knit.solutions.task38;
 
-public class Task38 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 38, taskDescription = "Паттерны. Команда (Command)")
+public class Task38 implements Solution {
     public static void main(String[] args) {
+        Task38 task = new Task38();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Light light = new Light();
         Conditioner conditioner = new Conditioner();
         RemoteControl remoteControl = new RemoteControl();

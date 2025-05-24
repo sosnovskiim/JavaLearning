@@ -1,7 +1,17 @@
 package org.knit.solutions.task27;
 
-public class Task27 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 27, taskDescription = "Паттерны. Декоратор (Decorator)")
+public class Task27 implements Solution {
     public static void main(String[] args) {
+        Task27 task = new Task27();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Coffee latte = new Latte();
         System.out.println(coffeeToString(latte));
 

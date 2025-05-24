@@ -1,11 +1,26 @@
 package org.knit.solutions.task24;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Task24 {
-    public static void main(String[] args) throws SQLException {
-        UserService userService = new UserService();
+@TaskDescription(taskNumber = 24, taskDescription = "Реализация CRUD с помощью SQLite")
+public class Task24 implements Solution {
+    public static void main(String[] args) {
+        Task24 task = new Task24();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
+        UserService userService;
+        try {
+            userService = new UserService();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         Scanner scanner = new Scanner(System.in);
         System.out.println("Доступные команды для управления пользователями:\n" +
                 "\tadd [name] [email] - добавляет нового пользователя;\n" +

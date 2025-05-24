@@ -1,7 +1,17 @@
 package org.knit.solutions.task41;
 
-public class Task41 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 41, taskDescription = "Паттерны. Приспособленец (Flyweight)")
+public class Task41 implements Solution {
     public static void main(String[] args) {
+        Task41 task = new Task41();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         CharacterFactory characterFactory = new CharacterFactory();
 
         Character character1 = characterFactory.getCharacter("100");

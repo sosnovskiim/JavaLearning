@@ -1,7 +1,17 @@
 package org.knit.solutions.task33;
 
-public class Task33 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 33, taskDescription = "Потоки. Перекрёсток со светофором")
+public class Task33 implements Solution {
     public static void main(String[] args) {
+        Task33 task = new Task33();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Crossroad crossroad = new Crossroad();
         Thread trafficLightThread = new Thread(() -> {
             for (int i = 0; i < 4; i++) {

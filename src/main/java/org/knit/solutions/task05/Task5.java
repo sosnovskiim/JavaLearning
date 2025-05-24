@@ -1,7 +1,17 @@
 package org.knit.solutions.task05;
 
-public class Task5 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 5, taskDescription = "Паттерны. Компоновщик (Composite)")
+public class Task5 implements Solution {
     public static void main(String[] args) {
+        Task5 task = new Task5();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Component file1 = new File("file1.txt", 100);
         Component file2 = new File("file2.txt", 200);
         Component file3 = new File("file3.txt", 300);
