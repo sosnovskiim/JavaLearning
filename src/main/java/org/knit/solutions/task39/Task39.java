@@ -1,10 +1,20 @@
 package org.knit.solutions.task39;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class Task39 {
+@TaskDescription(taskNumber = 39, taskDescription = "Паттерны. Посетитель (Visitor)")
+public class Task39 implements Solution {
     public static void main(String[] args) {
+        Task39 task = new Task39();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Set<FileSystemElement> fileSystem = new HashSet<>();
 
         FileSystemElement file1 = new File("file1", 100);

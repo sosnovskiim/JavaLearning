@@ -9,7 +9,7 @@ public class DatabaseConnection {
 
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/main/java/org/knit/tasks/task24/database.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/main/java/org/knit/solutions/task24/database.db");
         }
         return connection;
     }

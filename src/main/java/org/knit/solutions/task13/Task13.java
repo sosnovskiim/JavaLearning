@@ -1,12 +1,22 @@
 package org.knit.solutions.task13;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Task13 {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+@TaskDescription(taskNumber = 13, taskDescription = "Сериализация списка пользователей")
+public class Task13 implements Solution {
+    public static void main(String[] args) {
+        Task13 task = new Task13();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         List<User> users = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Доступные действия:\n" +
@@ -35,11 +45,19 @@ public class Task13 {
                     users.forEach(System.out::println);
                     break;
                 case "3":
-                    UserManager.uploadUsers(users);
+                    try {
+                        UserManager.uploadUsers(users);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     System.out.println("Список пользователей успешно сохранен.");
                     break;
                 case "4":
-                    users = UserManager.downloadUsers();
+                    try {
+                        users = UserManager.downloadUsers();
+                    } catch (IOException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                     System.out.println("Список пользователей успешно загружен.");
                     break;
                 case "5":

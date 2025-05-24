@@ -1,12 +1,21 @@
 package org.knit.solutions.task06;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
 import org.knit.solutions.task06.classes.Archer;
 import org.knit.solutions.task06.classes.Mage;
 import org.knit.solutions.task06.classes.Priest;
 import org.knit.solutions.task06.classes.Tank;
 
-public class Task6 {
+@TaskDescription(taskNumber = 6, taskDescription = "Моделирование персонажей 2D RPG-игры")
+public class Task6 implements Solution {
     public static void main(String[] args) {
+        Task6 task = new Task6();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Archer archer = new Archer("Андерсдоттер", 0, 0);
         Mage mage = new Mage("Барбелот", 1, 1);
         Priest priest = new Priest("Рейндоттир", 6, 6);

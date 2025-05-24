@@ -1,12 +1,22 @@
 package org.knit.solutions.task12;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
-public class Task12 {
+@TaskDescription(taskNumber = 12, taskDescription = "Подсчёт количества слов в текстовых документах")
+public class Task12 implements Solution {
     public static void main(String[] args) {
+        Task12 task = new Task12();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         try {
             CounterFileVisitor fileVisitor = new CounterFileVisitor();
             Files.walkFileTree(Paths.get("src/main/java/org/knit/tasks/task12/folder"), fileVisitor);

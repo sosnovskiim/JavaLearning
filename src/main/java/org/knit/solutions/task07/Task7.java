@@ -1,7 +1,17 @@
 package org.knit.solutions.task07;
 
-public class Task7 {
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
+@TaskDescription(taskNumber = 7, taskDescription = "Статистика на основе словаря")
+public class Task7 implements Solution {
     public static void main(String[] args) {
+        Task7 task = new Task7();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         DictionaryStatistics dictionaryStatistics =
                 DictionaryFactory.createDictionaryStatistics("misc/dictionary.txt");
         if (dictionaryStatistics != null) {

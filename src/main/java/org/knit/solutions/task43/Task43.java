@@ -1,9 +1,19 @@
 package org.knit.solutions.task43;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.Arrays;
 
-public class Task43 {
+@TaskDescription(taskNumber = 43, taskDescription = "Тесты JUnit. Слияние двух массивов чисел")
+public class Task43 implements Solution {
     public static void main(String[] args) {
+        Task43 task = new Task43();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         int[] a1 = {1, 1, 2, 3, 6, 0, 0, 0};
         int m = 5;
         int[] a2 = {2, 4, 7};

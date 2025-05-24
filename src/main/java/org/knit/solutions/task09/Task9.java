@@ -1,11 +1,21 @@
 package org.knit.solutions.task09;
 
+import org.knit.TaskDescription;
+import org.knit.solutions.Solution;
+
 import java.util.Scanner;
 
-public class Task9 {
+@TaskDescription(taskNumber = 9, taskDescription = "Проверка скорости печати")
+public class Task9 implements Solution {
     public static final long TIMEOUT = 60000;
 
     public static void main(String[] args) {
+        Task9 task = new Task9();
+        task.execute();
+    }
+
+    @Override
+    public void execute() {
         Dictionary dictionary = DictionaryFactory.createDictionary("misc/dictionary.txt");
         if (dictionary != null) {
             Scanner scanner = new Scanner(System.in);
